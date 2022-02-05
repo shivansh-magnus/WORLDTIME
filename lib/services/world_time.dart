@@ -7,6 +7,7 @@ class WorldTime {
   late String time; //this will have time of that location
   String flag; //this will contain url of flag of that location
   String url; //this will contain location url for API endpoint
+  late bool isDayTime; //tell's if it is day or not
 
   WorldTime({required this.Location, required this.flag, required this.url});
 
@@ -27,6 +28,7 @@ class WorldTime {
       now = now.add(Duration(hours: int.parse(offset)));
 
       // Set the time variable
+      isDayTime = now.hour < 6 && now.hour > 20 ? true : false;
       time = DateFormat.jm().format(now);
     } catch (e) {
       print("Caught error : $e");
