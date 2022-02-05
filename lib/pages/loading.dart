@@ -31,7 +31,7 @@ class _LoadingState extends State<Loading> {
     return Scaffold(
       backgroundColor: Colors.red[800],
       body: const Center(
-        child: SpinKitRotatingCircle(
+        child: SpinKitPouringHourGlassRefined(
           color: Colors.white,
           size: 80.0,
         ),
