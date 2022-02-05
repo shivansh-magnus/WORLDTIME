@@ -13,6 +13,7 @@ class _HomeState extends State<Home> {
     data = data.isNotEmpty
         ? data
         : ModalRoute.of(context)?.settings.arguments as Map;
+    print(data);
 
     String bgImage = data['isDayTime'] ? 'day.png' : 'night.png';
     Color? navcolor = data['isDayTime'] ? Colors.blue : Colors.indigo[700];
@@ -61,7 +62,7 @@ class _HomeState extends State<Home> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text(
-                      data['Location'].toString(),
+                      data['Location'],
                       style: const TextStyle(
                         fontSize: 28.0,
                         letterSpacing: 2.0,
@@ -74,7 +75,7 @@ class _HomeState extends State<Home> {
                   height: 20.0,
                 ),
                 Text(
-                  data['time'].toString(),
+                  data['time'],
                   style: const TextStyle(
                     fontSize: 66.0,
                     color: Colors.white,
